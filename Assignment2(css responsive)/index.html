@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive</title>
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+</head>
+<style>
+   
+    #container{
+        width: 80%;
+        height: 80%;
+        border: 1px solid black;
+        margin: auto;
+        padding: 10px;
+        text-align: center;
+        font-size: 25px;
+        background-color: rgb(140, 237, 237);
+    }
+   img{
+    height: 400px;
+    width: 400px;
+   }
+
+   @media all and (min-width:420px) and (max-width:720px){
+    #container{
+        width: 90%;
+        height: 90%;
+        margin: auto;
+        padding: 5px;
+        text-align: center;
+        font-size: 20px;
+        background-color: rgb(237, 140, 221);
+    }
+   img{
+    height: 300px;
+    width: 300px;
+   }
+
+   }
+   @media all and (min-width:320px) and (max-width:479px){
+    #container{
+        width: 98%;
+        height: 600px;
+        margin: auto;
+        padding: 5px;
+        text-align: center;
+        font-size: 18px;
+        background-color: rgb(242, 168, 95);
+    }
+   img{
+    height: 200px;
+    width: 200px;
+    margin-bottom: 10px;
+   }
+
+   }
+</style>
+<body>
+    <div id="container">
+    <h1>Refactor Academy</h1>
+    <img src="data:image/jpeg;base64,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" alt="">
+<p>Limited exposure to industry aligned technologies and skills can set students back by a couple of years. 
+
+    In our bootcamps, students are provided with training in the latest industry aligned technologies and skills. Then, they are provided access to the right job opportunities that not only help secure the first high paying job but also help in building a long lasting career. </p>
+</div>
+</body>
+</html>
