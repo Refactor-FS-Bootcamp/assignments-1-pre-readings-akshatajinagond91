@@ -1,0 +1,37 @@
+body{
+}
+
+#primary{
+    height: 200px;
+    width: 40%;
+    border: 1px solid black;
+    text-align: center;
+    margin: auto;
+}
+
+img{
+    height: 20px;
+    width: 20px;
+}
+
+#secondary{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 60%;
+    margin: auto;
+    margin-top: 10px;
+    
+}
+
+#secondary>div{
+    border: 1px solid black;
+    height: auto;
+    width: 100%;
+    line-height: 8px;
+}
+
+#icons{
+    display: flex;
+
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #headings{
+
+        display: flex;
+        justify-content: space-around;
+    }
+</style>
+<body>
+    <div id="headings" >
+    <h1><a href="./home.html">Home</a> </h1>
+    <h1><a href="./courses.html">courses</a> </h1>
+    <h1><a href="./bookmark.html">bookmarks</a> </h1> 
+</div>
+
+     <h3>enter your name</h3>
+     <input type="text" placeholder="name" id="name" value="">
+     <h3>select course</h3>
+     <select name="" id="course">
+        <option value="">select course</option>
+        <option value="frontEnd">front End</option>
+        <option value="backEnd">backend</option>
+        <option value="fullstack">fullstack</option>
+     </select><br>
+     <input type="submit" value="submit" id="submit" onclick="submitData()">
+
+    
+     
+</body>
+
+<script>
+ let userArray=[];
+document.querySelector("#submit").addEventListener("click",submitData());
+
+
+
+
+function submitData(){
+//    event.preventdefault();
+    let userObj={
+         name:document.querySelector("#name").value,
+         course:document.querySelector("#course").value   
+    };
+
+    
+    userArray.push(userObj);
+    console.log(userArray);
+
+   let userData= localStorage.setItem("userData",JSON.stringify(userArray));
+    
+    
+
+}
+
+
+
+
+</script>
+</html>

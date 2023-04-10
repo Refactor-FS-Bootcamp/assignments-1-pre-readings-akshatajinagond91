@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    thead>tr>td{
+       color: blue;
+       font-size:20px ; 
+    }
+</style>
+<body >
+    <table>
+        <thead>
+        <tr>
+            <td>name</td>
+            <td>course</td>
+            <td>bookmark</td>
+            
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</body>
+
+<script>
+
+
+    let courseData=JSON.parse(localStorage.getItem("userData"))||[];
+
+    console.log(courseData);
+
+     let bookmarkArray=JSON.parse(localStorage.getItem("bookMarkData"))||[];
+
+    
+    
+    function displayTable(courseData){
+      courseData.forEach(element => {
+        let tbody=document.querySelector("tbody");
+        let tr=document.createElement("tr");
+        let td1=document.createElement("td");
+     td1.innerText=element.name;
+        let td2=document.createElement("td");
+td2.innerText=element.course;
+        let td3=document.createElement("td");
+        td3.innerText="bookmark";
+        td3.style.backgroundColor="red";
+        td3.addEventListener("click", function(){
+            bookmarkFunc(element);
+        });
+
+        
+        tr.append(td1,td2,td3,button);
+        tbody.append(tr);
+        
+
+
+
+
+      });
+    }
+
+    displayTable(courseData);
+
+    function bookmarkFunc(element){
+         bookmarkArray.push(element);
+    localStorage.setItem("bookMarkData", JSON.stringify(bookmarkArray));
+
+    }
+
+
+</script>
+</html>

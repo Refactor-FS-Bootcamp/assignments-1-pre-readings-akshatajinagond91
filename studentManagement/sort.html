@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="displayTable(data)">
+    <input type="text" id="name" >
+    <select name="" id="select"  >
+        <option value="">Type</option>
+        <option value="frontEnd">frontEnd</option>
+        <option value="backEnd">backEnd</option>
+        <option value="fullstack">Fullstack</option>
+    </select>
+    <button onclick="submit()">submit</button>
+
+    <select name="" id="sortBy" onchange="sorting()" >
+        <option value="">Sort By Type</option>
+        <option value="ascending">ascending</option>
+        <option value="descending">descending</option>
+        
+    </select>
+
+    <select name="" id="filterBy" onchange="filtering()" >
+        <option value="">filter By </option>
+        <option value="frontEnd">frontEnd</option>
+        <option value="backEnd">backEnd</option>
+        <option value="fullstack">Fullstack</option>
+        
+    </select>
+    
+
+    <table>
+        <thead>
+            <tr>
+                <td>name</td>
+                <td>type</td>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        </tbody>
+    </table>
+</body>
+
+<script>
+    
+    let data=JSON.parse(localStorage.getItem("userdata"))||[];
+
+    function submit(){
+       
+        let obj={
+            name:document.querySelector("#name").value,
+            type:document.querySelector("#select").value
+
+        }
+        
+        data.push(obj);
+        console.log(data);
+
+        localStorage.setItem("userdata", JSON.stringify(data));
+    }
+
+    function displayTable(data){
+        let tbody=document.querySelector("tbody");
+        tbody.innerHTML="";
+        data.forEach(function(element){
+         
+          
+          let tr=document.createElement("tr");
+          let td1=document.createElement("td");
+          td1.innerText=element.name;
+          let td2=document.createElement("td");
+          td2.innerText=element.type;
+          tr.append(td1,td2);
+          tbody.append(tr);
+
+
+        });
+    }
+    
+
+    function sorting(){
+    let sorted= document.getElementById("sortBy").value;
+    if(sorted=="ascending"){
+      data.sort(function(a,b){
+        if(a.name>b.name) return 1;
+        if(a.name<b.name)  return -1;
+        return 0;
+      });
+      displayTable(data);
+    }
+    if(sorted=="descending"){
+        data.sort(function(a,b){
+            if(a.name>b.name) return -1;
+        if(a.name<b.name)  return 1;
+        return 0;
+        
+      });
+      displayTable(data);
+    }
+    
+    }
+
+    function filtering(){
+        let selected=document.getElementById("filterBy").value;
+        
+        if(selected=="frontEnd"){
+          let filtered_data=data.filter(function(element){
+              return element.type==selected;
+            });
+
+            displayTable(filtered_data);
+        }
+
+        if(selected=="backEnd"){
+            let filterd_list=data.filter(function(element){
+                return element.type==selected;
+            });
+            displayTable(filterd_list);
+        }
+
+        if(selected=="fullstack"){
+            let filterd_list=data.filter(function(element){
+                return element.type==selected;
+            });
+            displayTable(filterd_list);
+        }
+    }
+</script>
+</html>

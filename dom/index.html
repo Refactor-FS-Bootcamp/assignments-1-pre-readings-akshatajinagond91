@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document from akshata</title>
+    <link rel="icon" type="image/x-icon" href="https://tse3.mm.bing.net/th?id=OIP.hvej0FBRugfDg9qz9J6boQHaLH&pid=Api&P=0">
+</head>
+<body>
+   <h1>Hello all..!</h1> 
+   <input oninput="counter()" type="text"  placeholder="name" id="text"/>
+   <h1>slide show</h1>
+   <input type="text" id="image_url"/>
+   <button onclick="addImage()">Submit</button>
+   <button onclick="slideShow()">start slide show</button>
+<button onclick="pause()">Pause</button>
+   <div id="slide_show"></div>
+   
+
+   <h1>counter:</h1>
+   <h2 id="count"></h2>
+
+   <img id="pay_image" src="https://media.tenor.com/images/a742721ea2075bc3956a2ff62c9bfeef/tenor.gif" alt="">
+
+   <div id="container"></div>
+   <div id="container2"></div>
+   <p></p>
+     
+   </div>
+
+   <h1 id="counter"></h1>
+   <button>increament</button>
+   <button id="btn2">decreament</button>
+
+   
+   <script  src="./index.js">
+       
+   </script>
+
+   <script>
+     let c=localStorage.getItem("localCounter");
+
+     document.getElementById("counter").innerText=c;
+
+
+   document.querySelector("h1+button").addEventListener("click" ,incFunc);
+   document.getElementById("btn2").addEventListener("click",decrFunc);
+
+
+   function incFunc(){
+     c++;
+     document.getElementById("counter").innerText=c;
+     localStorage.setItem("localCounter",c);
+
+   }
+
+   function decrFunc(){
+      c--;
+      document.getElementById("counter").innerText=c;
+      localStorage.setItem("localCounter",c);
+
+   }
+   </script>
+</body>
+</html>

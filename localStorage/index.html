@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form">
+
+        <input type="text" id="type" placeholder="enter type">
+
+        <input type="text" id="question" placeholder="enter question name">
+
+        
+        <select name="" id="difficulty"  >
+            <option value="">qsndifficulty</option>
+            <option value="easy">easy</option>
+            <option value="medium">meadium</option>
+            <option value="hard">hard</option>
+        </select>
+
+        <input type="submit" id="submit" value="submit">
+</form >
+
+<table >
+    <thead>
+        <th>type</th>
+        <th>qsn name</th>
+        <th>difficulty level</th>
+        <th>revision required</th>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+</body>
+</html>
+
+
+<script>
+
+let userArray=JSON.parse(localStorage.getItem("qsnArray"))||[];
+// if(localStorage.getItem("qsnArray")==null){
+//     userArray=[];
+// }else{
+//     userArray=JSON.parse(localStorage.getItem("qsnArray"));
+// }
+
+
+
+// window.addEventListener("load", function(){
+//     displayTable(userArray);
+// });
+
+// or---
+
+displayTable(userArray);
+
+document.querySelector("form").addEventListener("submit",myDSA);
+
+function myDSA(event){
+event.preventDefault();
+
+    let obj={
+    type:document.querySelector("#type").value,
+    qsnName:document.querySelector("#question").value,
+    difficultyqsn:document.querySelector("#difficulty").value
+
+};
+
+// console.log(obj);
+userArray.push(obj);
+let qsnArray=localStorage.setItem("qsnArray",JSON.stringify(userArray));
+// console.log(userArray);
+displayTable(qsnArray);
+
+}
+
+
+function displayTable(qsnArray){
+    let tbody=document.querySelector("tbody");
+    tbody.innerHTML="";
+
+    userArray.forEach(element => {
+    
+    let tr=document.createElement("tr");
+
+    let td1=document.createElement("td");
+    td1.innerText=element.type;
+
+    let td2=document.createElement("td");
+    td2.innerText=element.qsnName;
+
+    let td3=document.createElement("td");
+    td3.innerText=element.difficultyqsn;
+
+    let td4=document.createElement("td");
+    
+    if(element.difficultyqsn=="easy"){
+        td4.innerText="No";
+    }
+    if(element.difficultyqsn=="medium"){
+        td4.innerText="once";
+    }else{
+    td4.innerText="yes";
+}
+
+   tr.append(td1,td2,td3,td4);
+    tbody.append(tr);
+    
+ });
+
+}
+
+    
+
+
+
+
+
+
+</script>

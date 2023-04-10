@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+.container{
+    display: grid;
+    height: 400px;
+    width: 600px;
+    border: 1px solid black;
+    grid-template-rows: repeat(5,1fr);
+    grid-template-columns: repeat(4,1fr);
+    grid-template-areas:' A A A A'
+                        ' B C  C D'
+                        ' B C  C D '
+                        'B C  C D'
+                        'E E E E' ;
+}
+.container div{
+    border: 1px solid red;
+    
+}
+.container div:nth-child(1){
+    grid-area: A;
+    background-color: rgb(175, 105, 240);
+}
+.container div:nth-child(2){
+    grid-area: B;
+}
+.container div:nth-child(3){
+    grid-area: C;
+}
+.container div:nth-child(4){
+    grid-area: D;
+}
+.container div:nth-child(5){
+    grid-area: E;
+    background-color: rgb(125, 170, 156);
+}
+
+img{
+    height:100%;
+    width: 100%;
+}
+
+
+    </style>
+</head>
+<body>
+
+
+    <!-- --------------------------first table-------------------------------- -->
+
+
+    <table border="1"  width="400">
+<tr>
+    <td>left</td>
+    <td><center>center</center> </td>
+    <td>right</td>
+</tr>
+<tr>
+    <td>left</td>
+    <td><center>center</center> </td>
+    <td>right</td>
+</tr>
+<tr>
+    <td>left</td>
+    <td><center>center</center> </td>
+    <td>right</td>
+</tr>
+    </table>
+
+    <br><br><br><br>
+
+    <!-- ----------------------------second table--------------------------------------- -->
+
+
+    <table border="1"  width="400" height="150">
+        <tr>
+            <td colspan="6"></td>
+        </tr>
+        <tr>
+            <td rowspan="4"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="3" rowspan="2"></td>
+            <td></td>
+        </tr>
+<tr>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td colspan="6"></td>
+</tr>
+    </table>
+    <br><br><br>
+
+        <!-- ----------------------------third table--------------------------------------- -->
+
+        <table  border="1"  width="400" height="150">
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td rowspan="4"></td>
+    <td></td>
+    <td rowspan="4"></td>
+</tr>
+<tr>
+    <td></td>
+</tr>
+<tr>
+    <td></td>
+</tr>
+<tr>
+    <td></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+ </table>
+ <br><br>
+
+     <!-- ----------------------------fourth table--------------------------------------- -->
+
+     <div class="container">
+        <div></div>
+        <div></div>
+        <div><img src="https://kb.rspca.org.au/wp-content/uploads/2018/11/golder-retriever-puppy.jpeg" alt=""> </div>
+        <div></div>
+        <div></div>
+     </div>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+          width: 100%;
+          background-color: brown;
+          display: flex; 
+          gap: 10px; 
+          flex-direction: column;
+           
+        }
+        #container1{
+           border: 1px solid white;
+           height: 400px;
+           width: 180px;
+           background-color: rgb(60, 62, 64);
+           display: flex;
+           gap: 20px;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+           
+            
+        }
+        #container1 div{
+            height: 100px;
+            width: 100px;
+            background-color: bisque;
+            
+        }
+        #container2{
+            border: 1px solid white;
+            height: 400px;
+           width: 180px;
+           background-color: rgb(60, 62, 64);
+           display: flex;
+           gap: 20px;
+           flex-direction: column;
+           justify-content: flex-end;
+           align-items: flex-end;
+          
+
+           /* padding: 0px 10px 10px 0px;
+           box-sizing: border-box; */
+
+        }
+
+        #container2 div{
+            height: 50px;
+            width: 50px;
+            background-color: bisque;
+            margin:10px;
+        }
+        nav{
+            position: fixed;
+            width: 100%;
+            background-color: teal;
+            top: 0;
+        }
+        footer{
+            position: fixed;
+            background-color: grey;
+            width: 100%;
+            bottom: 0;
+        }
+#content{
+    padding: 20px 20px 20px 20px;
+    overflow: auto ;
+}
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="">home</a>
+        <a href="">contact</a><a href="">about</a><a href="">service</a>
+    </nav>
+    <div id="content">
+    <div id="container1">
+        <div style="order: 1">1</div>
+        <div style="order: 3">2</div> 
+        <div style="order: 2">3</div>
+    </div>
+    <div id="container2">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+</div>
+    <footer>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </footer>
+   
+</body>
+</html>
